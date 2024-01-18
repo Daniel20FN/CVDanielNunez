@@ -29,7 +29,7 @@ function verMas() {
 
 function copiarCorreo() {
   var textarea = document.createElement("textarea");
-  textarea.value = "daniel1011083376@gmail.com";
+  textarea.value = "dnunez200508@gmail.com";
   document.body.appendChild(textarea);
   textarea.select();
   document.execCommand("copy");
