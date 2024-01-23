@@ -502,12 +502,12 @@ h3 {
     background-color: #ffffff;
     box-shadow: 0px 0px 5px rgba(90, 70, 70, 0.452);
     flex: 1 0 70%;
-    height: 170px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
+
 .empresa{
     color: #a17f7f;
 }
@@ -556,7 +556,13 @@ h3 {
 .infoExperience > p{
     color: #a17f7f;
 }
-
+.informatica{
+    border: #007CED 2px solid;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+}
 /* Educacion */
 .education{
     margin-top: 30px;
