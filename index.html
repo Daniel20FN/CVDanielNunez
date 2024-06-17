@@ -1,894 +1,1417 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/870b0a2d47.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/icon.png" type="image/png">
+    <script
+      src="https://kit.fontawesome.com/870b0a2d47.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icon.png" type="image/png" />
     <title>CV - Daniel Núñez</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="overlay" id="overlay"></div>
     <div class="overlay ov2" id="overlay2"></div>
     <div class="overlay ov3" id="overlay3"></div>
     <header>
-        <nav class="navbar navbar fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Daniel Núñez</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="img-text-aside d-flex flex-column align-items-center">
-                            <img src="img/fotoPersonal2.jpeg" alt="Imagen Personal">
-                            <p class="texto-aside"> </p>
-                        </div>
-                        <ul class="list-aside">
-                            <li>
-                                <img alt="svgImg"
-                                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTI0Ljk2Mjg5LDEuMDU0NjljLTAuMjA5ODcsMC4wMDcyNCAtMC40MTIxNCwwLjA4MDM2IC0wLjU3ODEyLDAuMjA4OThsLTIzLDE3Ljk0NzI3Yy0wLjQzNTc5LDAuMzM5NzggLTAuNTEzNjEsMC45Njg1MSAtMC4xNzM4MywxLjQwNDNjMC4zMzk3OCwwLjQzNTc5IDAuOTY4NTEsMC41MTM2MSAxLjQwNDMsMC4xNzM4M2wxLjM4NDc3LC0xLjA4MDA4djI2LjI5MTAyYzAuMDAwMDYsMC41NTIyNiAwLjQ0Nzc0LDAuOTk5OTQgMSwxaDEzLjgzMjAzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDExLjY3MzgzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDEzLjg0MThjMC41NTIyNiwtMC4wMDAwNiAwLjk5OTk0LC0wLjQ0Nzc0IDEsLTF2LTI2LjI5MTAybDEuMzg0NzcsMS4wODAwOGMwLjI4MTksMC4yMTk4MyAwLjY1OTY3LDAuMjcyNTcgMC45OTEsMC4xMzgzM2MwLjMzMTMzLC0wLjEzNDIzIDAuNTY1ODYsLTAuNDM1MDQgMC42MTUyNiwtMC43ODkxYzAuMDQ5NCwtMC4zNTQwNiAtMC4wOTM4NiwtMC43MDc1NyAtMC4zNzU3OSwtMC45MjczNmwtNy42MTUyMywtNS45NDE0MXYtNy4yNjk1M2gtNnYyLjU4NTk0bC05LjM4NDc3LC03LjMyMjI3Yy0wLjE4NjA3LC0wLjE0NDI4IC0wLjQxNzA3LC0wLjIxODI4IC0wLjY1MjM0LC0wLjIwODk4ek0yNSwzLjMyMjI3bDE5LDE0LjgyNjE3djI2Ljg1MTU2aC0xMnYtMTloLTE0djE5aC0xMnYtMjYuODUxNTZ6TTM3LDhoMnYzLjcwODk4bC0yLC0xLjU2MjV6TTIwLDI4aDEwdjE3aC0xMHoiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4=" />
-                                <a href="#sectionPrincipal">Home</a>
-                            </li>
-                            <li>
-                                <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4ElEQVR4nOXVu49NURQG8OsVr5EhEo9GzIyCgjFGRIxHJaJQGkGlEIlCIx6TjGIU/gRBgoKJKIkgCn8CyXiETuKRofBoCIqfbFmSMyf37rOjkljNvWft79tr7bX2/lar9V8YurAfV/AEk/gZvxO4HOtdf7v5WXzALRzFOizBTCxFf/hvB24M80sDDOIlrqGvkLMK1/ECG5rAQ5HVcNmZpxr2BX9LLpv32NkW0PqNmYc1uR5gV+zT227xAY5nyOfwA2/wFWcy2JO4X3dux/PU1EwZJv9kh4EI2PbUcTlSf7ZWnZdwIpPZOK7WfCmpsQznFC5UHU/TFc0QFmBu5bs/3svBDCdhJqqOL+juRKiR+/AWFzEtg+vG56rjGxYVBJiFZ7iDGQ3YhfUg6fENFgTZhu+FCa2vlytp0EgBcS1Gm3CBPY3zVccOvOp0hSu4FdhbWNZUnaH6wr0kig3kA1AQZAR32y0khX2NPQ3q3NsQYHc83J5OgE14lyS8KdvMSZNAbm4C9sRrPpIFVgyrcTN4A60Si1lyKP5Pj+m3EYujqcvT3MCx6GUqz2hVFZoCzAmpXobZuBGy8wgfQxhTSR+H5g2nEVC0eU3YHuJwXMPx4rHaKguwEp9Cm1KNp97zf9l+AfzKkFH1eqRPAAAAAElFTkSuQmCC">
-                                <a href="#aboutMe">Sobre mí</a>
-                            </li>
-                            <li>
-                                <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8klEQVR4nO3VMUoDQRTG8T1B0JDCOjcIpEmZQ1inUHIFT2BqhTQWWos5QBqtbQOiXSrBykqxSPWTgS1CeBMYmC754F/s996+b3kDO01zVE2hgxmeApLfqRHygEecByT/vkbIGwaZ2iDVS4aN8Ir1Dht8Bv669TeBn+aMopAPTNCvwATvUcgfTkrXGSnNSfOiwjHkgNfVy7y0FGuZ6e/tC1ngKuALY5xuMW79qH+xLyT98O4CvjHc6R+2ftQ/Kz4TrHCN6RbpeVXt4HGZ+eKL0pBfdJsKQhc/UeEF88y9Ucocz1HIGW4zN2ApN2leja00h6d/QuXU83U2Id4AAAAASUVORK5CYII=">
-                                <a href="#portfolio">Mi portafolio</a>
-                            </li>
-                            <li>
-                                <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nO3TsUoDQRDG8UOwSW8hpkqdRvA18hSaQmwDViJYSaq0kiYI9sHnsEhhp21KtYhF0viThQmE43IkIduIA8twM9/uf2b2tij+LZfhGFfJ5zp8gA+Mww/2AsMR7vGFB5zUxfdyeNl2gu1aoU327aX9ouYc9KsuEoc4RQfn6OF6ZfUi3gnd4ZofpV8JwQgzTPCMYVRYXsPIT0I/qoSsBK3AkjW2HFUj9g3W/uIhWFZgxztR+35StiS+jYf3gik+sYjcIr6nkR+Hvr64EiTN9xuP6OIMreUIYzStiHdDl/SzbSBt3FR0Mo9O5hWdJH17Y0g2kxuCZoyhmRPyiie854S84TL5nJAL/CSfE3KAu+SzQYq/YL/QJXQ6HlKs4wAAAABJRU5ErkJggg==">
-                                <a href="#resumen">Resumen</a>
-                            </li>
-                            <li>
-                                <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nL3VsUoDQRSF4RWJhZWdpYV2IaJBsbUMYmtlaS8WgYAPIAtprFLlBVJbWfkAthaijaWI4CN8MrKEMKyQSTJ74Swzd86dfzlbbFE0UdhDH4MM6mM3QN4xQplBI7wFiMxJ+XtkimpQaQopM0pzcRXpg2u4zA05xUtuyATXK4HgDCdRbxs/2Kr2XfSSIWjjEa84js5uMZ7ZH1W+4G/PBcEQX7hBKzpbx0e4OOq3Kn+YGy4LOcdzzdumQWriOpzpP+Aq8naT44oMPXSq9Q6+sRl5Ogt9+H/Md7ifx7sQBBv4rItjlZALPKUCUiH7OMgKWaY0CtHAn7HMrZxJTesXBKaE30BM5hgAAAAASUVORK5CYII=">
-                                <a href="#skills">Skills</a>
-                            </li>
-                            <li>
-                                <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVR4nMXWz4uNURgH8EEuC+RHkmRhWMxiRn4uKVmym/zoRjJ/gEySjTIKaVgxhK2xVGwnrNQsWIjBQrFFoZT1R6eeW6fTmZl771w5dRbn+z7n+Z73e77P8759ff9jYB1GcfBfEWzHFzzEV+ypxGzBOVyYYx7DohrBfnzDkVgfxwyWFXEfcR/X55jvE1FJsC1OfqDAH+NqgWlDkTFcKsHzmKgEbwjyXV2QjJXgaUzOsuEEXveCJMn1A43Khs3p2YJJ4sFLDFfwe7jRK5LDeIclGTYYd7I6wz4l0rDqEHZWLPwGzdlO8CIVYrZuho2XZ9hWXMTbSPgBdwoLN6t1Egn68R0DGTYZc3GG7cVv/MG1+eSrEY3E6VbFuoEp3Co6w1ns6JggS5Je/0nrfrASr3Cl66QVkqVx+gctbbE+iG7n0i2UaAWmMV5gU3iUzIA1uIlfqWC7ki+SJDuOZ2/UiC49E/ZOdbQJJ2N9uVbU7RBNh3R5DSWbDhaxG+Muk713d0qUZHqGpy3XzRPfrHX1ds1wN+w90EZ8kvRMRyTZ5pEo2NFcviLmKD5jbVckWWd4Hr1uOP96JoniCzvU14uBQ9G9f0brmYi72NcTgoIsNc1T8YPR33OCdsZfAuTmwuEe9I8AAAAASUVORK5CYII=">
-                                <a href="#contacto">Contacto</a>
-                            </li>
-                        </ul>
-                        <div class="aside-footer">
-                            <hr>
-                            <ul class="list-footer">
-                                <li><a href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
-                                        target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
-                                            viewBox="0 0 48 48">
-                                            <path fill="#0288D1"
-                                                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
-                                            </path>
-                                            <path fill="#FFF"
-                                                d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z">
-                                            </path>
-                                        </svg>
-                                    </a></li>
-                                <li><a onclick="copiarCorreo()" href="javascript:void(0)" id="enlaceCopiar"
-                                        data-bs-toggle="popover" data-bs-placement="top" data-bs-content="¡Copiado!">
-                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
-                                            viewBox="0 0 48 48">
-                                            <path fill="#e0e0e0"
-                                                d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z">
-                                            </path>
-                                            <path fill="#d9d9d9"
-                                                d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z">
-                                            </path>
-                                            <path fill="#eee"
-                                                d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z">
-                                            </path>
-                                            <path fill="#e0e0e0"
-                                                d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z">
-                                            </path>
-                                            <path fill="#ca3737"
-                                                d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z">
-                                            </path>
-                                            <path fill="#f5f5f5"
-                                                d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z">
-                                            </path>
-                                            <path fill="#e84f4b"
-                                                d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="certificados/cv-daniel-nunez.pdf" target="_blank">
-                                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                            data-bs-trigger="hover focus" data-bs-content="Descargar CV">
-                                            <img width="28" height="28"
-                                                src="https://img.icons8.com/dusk/64/download--v1.png"
-                                                alt="download--v1" />
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
+      <nav class="navbar navbar fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                Daniel Núñez
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
-        </nav>
+            <div class="offcanvas-body">
+              <div class="img-text-aside d-flex flex-column align-items-center">
+                <img src="img/3.jpeg" alt="Imagen Personal" />
+                <p class="texto-aside"></p>
+              </div>
+              <ul class="list-aside">
+                <li>
+                  <img
+                    alt="svgImg"
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTI0Ljk2Mjg5LDEuMDU0NjljLTAuMjA5ODcsMC4wMDcyNCAtMC40MTIxNCwwLjA4MDM2IC0wLjU3ODEyLDAuMjA4OThsLTIzLDE3Ljk0NzI3Yy0wLjQzNTc5LDAuMzM5NzggLTAuNTEzNjEsMC45Njg1MSAtMC4xNzM4MywxLjQwNDNjMC4zMzk3OCwwLjQzNTc5IDAuOTY4NTEsMC41MTM2MSAxLjQwNDMsMC4xNzM4M2wxLjM4NDc3LC0xLjA4MDA4djI2LjI5MTAyYzAuMDAwMDYsMC41NTIyNiAwLjQ0Nzc0LDAuOTk5OTQgMSwxaDEzLjgzMjAzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDExLjY3MzgzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDEzLjg0MThjMC41NTIyNiwtMC4wMDAwNiAwLjk5OTk0LC0wLjQ0Nzc0IDEsLTF2LTI2LjI5MTAybDEuMzg0NzcsMS4wODAwOGMwLjI4MTksMC4yMTk4MyAwLjY1OTY3LDAuMjcyNTcgMC45OTEsMC4xMzgzM2MwLjMzMTMzLC0wLjEzNDIzIDAuNTY1ODYsLTAuNDM1MDQgMC42MTUyNiwtMC43ODkxYzAuMDQ5NCwtMC4zNTQwNiAtMC4wOTM4NiwtMC43MDc1NyAtMC4zNzU3OSwtMC45MjczNmwtNy42MTUyMywtNS45NDE0MXYtNy4yNjk1M2gtNnYyLjU4NTk0bC05LjM4NDc3LC03LjMyMjI3Yy0wLjE4NjA3LC0wLjE0NDI4IC0wLjQxNzA3LC0wLjIxODI4IC0wLjY1MjM0LC0wLjIwODk4ek0yNSwzLjMyMjI3bDE5LDE0LjgyNjE3djI2Ljg1MTU2aC0xMnYtMTloLTE0djE5aC0xMnYtMjYuODUxNTZ6TTM3LDhoMnYzLjcwODk4bC0yLC0xLjU2MjV6TTIwLDI4aDEwdjE3aC0xMHoiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4="
+                  />
+                  <a href="#sectionPrincipal">Home</a>
+                </li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4ElEQVR4nOXVu49NURQG8OsVr5EhEo9GzIyCgjFGRIxHJaJQGkGlEIlCIx6TjGIU/gRBgoKJKIkgCn8CyXiETuKRofBoCIqfbFmSMyf37rOjkljNvWft79tr7bX2/lar9V8YurAfV/AEk/gZvxO4HOtdf7v5WXzALRzFOizBTCxFf/hvB24M80sDDOIlrqGvkLMK1/ECG5rAQ5HVcNmZpxr2BX9LLpv32NkW0PqNmYc1uR5gV+zT227xAY5nyOfwA2/wFWcy2JO4X3dux/PU1EwZJv9kh4EI2PbUcTlSf7ZWnZdwIpPZOK7WfCmpsQznFC5UHU/TFc0QFmBu5bs/3svBDCdhJqqOL+juRKiR+/AWFzEtg+vG56rjGxYVBJiFZ7iDGQ3YhfUg6fENFgTZhu+FCa2vlytp0EgBcS1Gm3CBPY3zVccOvOp0hSu4FdhbWNZUnaH6wr0kig3kA1AQZAR32y0khX2NPQ3q3NsQYHc83J5OgE14lyS8KdvMSZNAbm4C9sRrPpIFVgyrcTN4A60Si1lyKP5Pj+m3EYujqcvT3MCx6GUqz2hVFZoCzAmpXobZuBGy8wgfQxhTSR+H5g2nEVC0eU3YHuJwXMPx4rHaKguwEp9Cm1KNp97zf9l+AfzKkFH1eqRPAAAAAElFTkSuQmCC"
+                  />
+                  <a href="#aboutMe">Sobre mí</a>
+                </li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8klEQVR4nO3VMUoDQRTG8T1B0JDCOjcIpEmZQ1inUHIFT2BqhTQWWos5QBqtbQOiXSrBykqxSPWTgS1CeBMYmC754F/s996+b3kDO01zVE2hgxmeApLfqRHygEecByT/vkbIGwaZ2iDVS4aN8Ir1Dht8Bv669TeBn+aMopAPTNCvwATvUcgfTkrXGSnNSfOiwjHkgNfVy7y0FGuZ6e/tC1ngKuALY5xuMW79qH+xLyT98O4CvjHc6R+2ftQ/Kz4TrHCN6RbpeVXt4HGZ+eKL0pBfdJsKQhc/UeEF88y9Ucocz1HIGW4zN2ApN2leja00h6d/QuXU83U2Id4AAAAASUVORK5CYII="
+                  />
+                  <a href="#portfolio">Mi portafolio</a>
+                </li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nO3TsUoDQRDG8UOwSW8hpkqdRvA18hSaQmwDViJYSaq0kiYI9sHnsEhhp21KtYhF0viThQmE43IkIduIA8twM9/uf2b2tij+LZfhGFfJ5zp8gA+Mww/2AsMR7vGFB5zUxfdyeNl2gu1aoU327aX9ouYc9KsuEoc4RQfn6OF6ZfUi3gnd4ZofpV8JwQgzTPCMYVRYXsPIT0I/qoSsBK3AkjW2HFUj9g3W/uIhWFZgxztR+35StiS+jYf3gik+sYjcIr6nkR+Hvr64EiTN9xuP6OIMreUIYzStiHdDl/SzbSBt3FR0Mo9O5hWdJH17Y0g2kxuCZoyhmRPyiie854S84TL5nJAL/CSfE3KAu+SzQYq/YL/QJXQ6HlKs4wAAAABJRU5ErkJggg=="
+                  />
+                  <a href="#resumen">Resumen</a>
+                </li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nL3VsUoDQRSF4RWJhZWdpYV2IaJBsbUMYmtlaS8WgYAPIAtprFLlBVJbWfkAthaijaWI4CN8MrKEMKyQSTJ74Swzd86dfzlbbFE0UdhDH4MM6mM3QN4xQplBI7wFiMxJ+XtkimpQaQopM0pzcRXpg2u4zA05xUtuyATXK4HgDCdRbxs/2Kr2XfSSIWjjEa84js5uMZ7ZH1W+4G/PBcEQX7hBKzpbx0e4OOq3Kn+YGy4LOcdzzdumQWriOpzpP+Aq8naT44oMPXSq9Q6+sRl5Ogt9+H/Md7ifx7sQBBv4rItjlZALPKUCUiH7OMgKWaY0CtHAn7HMrZxJTesXBKaE30BM5hgAAAAASUVORK5CYII="
+                  />
+                  <a href="#skills">Skills</a>
+                </li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVR4nMXWz4uNURgH8EEuC+RHkmRhWMxiRn4uKVmym/zoRjJ/gEySjTIKaVgxhK2xVGwnrNQsWIjBQrFFoZT1R6eeW6fTmZl771w5dRbn+z7n+Z73e77P8759ff9jYB1GcfBfEWzHFzzEV+ypxGzBOVyYYx7DohrBfnzDkVgfxwyWFXEfcR/X55jvE1FJsC1OfqDAH+NqgWlDkTFcKsHzmKgEbwjyXV2QjJXgaUzOsuEEXveCJMn1A43Khs3p2YJJ4sFLDFfwe7jRK5LDeIclGTYYd7I6wz4l0rDqEHZWLPwGzdlO8CIVYrZuho2XZ9hWXMTbSPgBdwoLN6t1Egn68R0DGTYZc3GG7cVv/MG1+eSrEY3E6VbFuoEp3Co6w1ns6JggS5Je/0nrfrASr3Cl66QVkqVx+gctbbE+iG7n0i2UaAWmMV5gU3iUzIA1uIlfqWC7ki+SJDuOZ2/UiC49E/ZOdbQJJ2N9uVbU7RBNh3R5DSWbDhaxG+Muk713d0qUZHqGpy3XzRPfrHX1ds1wN+w90EZ8kvRMRyTZ5pEo2NFcviLmKD5jbVckWWd4Hr1uOP96JoniCzvU14uBQ9G9f0brmYi72NcTgoIsNc1T8YPR33OCdsZfAuTmwuEe9I8AAAAASUVORK5CYII="
+                  />
+                  <a href="#contacto">Contacto</a>
+                </li>
+              </ul>
+              <div class="aside-footer">
+                <hr />
+                <ul class="list-footer">
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        width="30"
+                        height="30"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          fill="#0288D1"
+                          d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                        ></path>
+                        <path
+                          fill="#FFF"
+                          d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      onclick="copiarCorreo()"
+                      href="javascript:void(0)"
+                      id="enlaceCopiar"
+                      data-bs-toggle="popover"
+                      data-bs-placement="top"
+                      data-bs-content="¡Copiado!"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        x="0px"
+                        y="0px"
+                        width="25"
+                        height="25"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          fill="#e0e0e0"
+                          d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z"
+                        ></path>
+                        <path
+                          fill="#d9d9d9"
+                          d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z"
+                        ></path>
+                        <path
+                          fill="#eee"
+                          d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z"
+                        ></path>
+                        <path
+                          fill="#e0e0e0"
+                          d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z"
+                        ></path>
+                        <path
+                          fill="#ca3737"
+                          d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z"
+                        ></path>
+                        <path
+                          fill="#f5f5f5"
+                          d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z"
+                        ></path>
+                        <path
+                          fill="#e84f4b"
+                          d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="certificados/cv-daniel-nunez.pdf" target="_blank">
+                      <span
+                        class="d-inline-block"
+                        tabindex="0"
+                        data-bs-toggle="popover"
+                        data-bs-trigger="hover focus"
+                        data-bs-content="Descargar CV"
+                      >
+                        <img
+                          width="28"
+                          height="28"
+                          src="https://img.icons8.com/dusk/64/download--v1.png"
+                          alt="download--v1"
+                        />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <aside>
-        <nav class="contenedor-aside">
-            <div class="img-text-aside d-flex flex-column align-items-center">
-                <img src="img/fotoPersonal2.jpeg" alt="Imagen Personal">
-                <p class="texto-aside">DANIEL NÚÑEZ</p>
-            </div>
-            <ul class="list-aside">
-                <li>
-                    <img alt="svgImg"
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTI0Ljk2Mjg5LDEuMDU0NjljLTAuMjA5ODcsMC4wMDcyNCAtMC40MTIxNCwwLjA4MDM2IC0wLjU3ODEyLDAuMjA4OThsLTIzLDE3Ljk0NzI3Yy0wLjQzNTc5LDAuMzM5NzggLTAuNTEzNjEsMC45Njg1MSAtMC4xNzM4MywxLjQwNDNjMC4zMzk3OCwwLjQzNTc5IDAuOTY4NTEsMC41MTM2MSAxLjQwNDMsMC4xNzM4M2wxLjM4NDc3LC0xLjA4MDA4djI2LjI5MTAyYzAuMDAwMDYsMC41NTIyNiAwLjQ0Nzc0LDAuOTk5OTQgMSwxaDEzLjgzMjAzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDExLjY3MzgzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDEzLjg0MThjMC41NTIyNiwtMC4wMDAwNiAwLjk5OTk0LC0wLjQ0Nzc0IDEsLTF2LTI2LjI5MTAybDEuMzg0NzcsMS4wODAwOGMwLjI4MTksMC4yMTk4MyAwLjY1OTY3LDAuMjcyNTcgMC45OTEsMC4xMzgzM2MwLjMzMTMzLC0wLjEzNDIzIDAuNTY1ODYsLTAuNDM1MDQgMC42MTUyNiwtMC43ODkxYzAuMDQ5NCwtMC4zNTQwNiAtMC4wOTM4NiwtMC43MDc1NyAtMC4zNzU3OSwtMC45MjczNmwtNy42MTUyMywtNS45NDE0MXYtNy4yNjk1M2gtNnYyLjU4NTk0bC05LjM4NDc3LC03LjMyMjI3Yy0wLjE4NjA3LC0wLjE0NDI4IC0wLjQxNzA3LC0wLjIxODI4IC0wLjY1MjM0LC0wLjIwODk4ek0yNSwzLjMyMjI3bDE5LDE0LjgyNjE3djI2Ljg1MTU2aC0xMnYtMTloLTE0djE5aC0xMnYtMjYuODUxNTZ6TTM3LDhoMnYzLjcwODk4bC0yLC0xLjU2MjV6TTIwLDI4aDEwdjE3aC0xMHoiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4=" />
-                    <a href="#sectionPrincipal">Home</a>
-                </li>
-                <li>
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4ElEQVR4nOXVu49NURQG8OsVr5EhEo9GzIyCgjFGRIxHJaJQGkGlEIlCIx6TjGIU/gRBgoKJKIkgCn8CyXiETuKRofBoCIqfbFmSMyf37rOjkljNvWft79tr7bX2/lar9V8YurAfV/AEk/gZvxO4HOtdf7v5WXzALRzFOizBTCxFf/hvB24M80sDDOIlrqGvkLMK1/ECG5rAQ5HVcNmZpxr2BX9LLpv32NkW0PqNmYc1uR5gV+zT227xAY5nyOfwA2/wFWcy2JO4X3dux/PU1EwZJv9kh4EI2PbUcTlSf7ZWnZdwIpPZOK7WfCmpsQznFC5UHU/TFc0QFmBu5bs/3svBDCdhJqqOL+juRKiR+/AWFzEtg+vG56rjGxYVBJiFZ7iDGQ3YhfUg6fENFgTZhu+FCa2vlytp0EgBcS1Gm3CBPY3zVccOvOp0hSu4FdhbWNZUnaH6wr0kig3kA1AQZAR32y0khX2NPQ3q3NsQYHc83J5OgE14lyS8KdvMSZNAbm4C9sRrPpIFVgyrcTN4A60Si1lyKP5Pj+m3EYujqcvT3MCx6GUqz2hVFZoCzAmpXobZuBGy8wgfQxhTSR+H5g2nEVC0eU3YHuJwXMPx4rHaKguwEp9Cm1KNp97zf9l+AfzKkFH1eqRPAAAAAElFTkSuQmCC">
-                    <a href="#aboutMe">Sobre mí</a>
-                </li>
-                <li>
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8klEQVR4nO3VMUoDQRTG8T1B0JDCOjcIpEmZQ1inUHIFT2BqhTQWWos5QBqtbQOiXSrBykqxSPWTgS1CeBMYmC754F/s996+b3kDO01zVE2hgxmeApLfqRHygEecByT/vkbIGwaZ2iDVS4aN8Ir1Dht8Bv669TeBn+aMopAPTNCvwATvUcgfTkrXGSnNSfOiwjHkgNfVy7y0FGuZ6e/tC1ngKuALY5xuMW79qH+xLyT98O4CvjHc6R+2ftQ/Kz4TrHCN6RbpeVXt4HGZ+eKL0pBfdJsKQhc/UeEF88y9Ucocz1HIGW4zN2ApN2leja00h6d/QuXU83U2Id4AAAAASUVORK5CYII=">
-                    <a href="#portfolio">Mi portafolio</a>
-                </li>
-                <li>
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nO3TsUoDQRDG8UOwSW8hpkqdRvA18hSaQmwDViJYSaq0kiYI9sHnsEhhp21KtYhF0viThQmE43IkIduIA8twM9/uf2b2tij+LZfhGFfJ5zp8gA+Mww/2AsMR7vGFB5zUxfdyeNl2gu1aoU327aX9ouYc9KsuEoc4RQfn6OF6ZfUi3gnd4ZofpV8JwQgzTPCMYVRYXsPIT0I/qoSsBK3AkjW2HFUj9g3W/uIhWFZgxztR+35StiS+jYf3gik+sYjcIr6nkR+Hvr64EiTN9xuP6OIMreUIYzStiHdDl/SzbSBt3FR0Mo9O5hWdJH17Y0g2kxuCZoyhmRPyiie854S84TL5nJAL/CSfE3KAu+SzQYq/YL/QJXQ6HlKs4wAAAABJRU5ErkJggg==">
-                    <a href="#resumen">Resumen</a>
-                </li>
-                <li>
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nL3VsUoDQRSF4RWJhZWdpYV2IaJBsbUMYmtlaS8WgYAPIAtprFLlBVJbWfkAthaijaWI4CN8MrKEMKyQSTJ74Swzd86dfzlbbFE0UdhDH4MM6mM3QN4xQplBI7wFiMxJ+XtkimpQaQopM0pzcRXpg2u4zA05xUtuyATXK4HgDCdRbxs/2Kr2XfSSIWjjEa84js5uMZ7ZH1W+4G/PBcEQX7hBKzpbx0e4OOq3Kn+YGy4LOcdzzdumQWriOpzpP+Aq8naT44oMPXSq9Q6+sRl5Ogt9+H/Md7ifx7sQBBv4rItjlZALPKUCUiH7OMgKWaY0CtHAn7HMrZxJTesXBKaE30BM5hgAAAAASUVORK5CYII=">
-                    <a href="#skills">Skills</a>
-                </li>
-                <li>
-                    <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVR4nMXWz4uNURgH8EEuC+RHkmRhWMxiRn4uKVmym/zoRjJ/gEySjTIKaVgxhK2xVGwnrNQsWIjBQrFFoZT1R6eeW6fTmZl771w5dRbn+z7n+Z73e77P8759ff9jYB1GcfBfEWzHFzzEV+ypxGzBOVyYYx7DohrBfnzDkVgfxwyWFXEfcR/X55jvE1FJsC1OfqDAH+NqgWlDkTFcKsHzmKgEbwjyXV2QjJXgaUzOsuEEXveCJMn1A43Khs3p2YJJ4sFLDFfwe7jRK5LDeIclGTYYd7I6wz4l0rDqEHZWLPwGzdlO8CIVYrZuho2XZ9hWXMTbSPgBdwoLN6t1Egn68R0DGTYZc3GG7cVv/MG1+eSrEY3E6VbFuoEp3Co6w1ns6JggS5Je/0nrfrASr3Cl66QVkqVx+gctbbE+iG7n0i2UaAWmMV5gU3iUzIA1uIlfqWC7ki+SJDuOZ2/UiC49E/ZOdbQJJ2N9uVbU7RBNh3R5DSWbDhaxG+Muk713d0qUZHqGpy3XzRPfrHX1ds1wN+w90EZ8kvRMRyTZ5pEo2NFcviLmKD5jbVckWWd4Hr1uOP96JoniCzvU14uBQ9G9f0brmYi72NcTgoIsNc1T8YPR33OCdsZfAuTmwuEe9I8AAAAASUVORK5CYII=">
-                    <a href="#contacto">Contacto</a>
-                </li>
-            </ul>
-            <div class="aside-footer">
-                <hr>
-                <ul class="list-footer">
-                    <li><a href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
-                            target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
-                                viewBox="0 0 48 48">
-                                <path fill="#0288D1"
-                                    d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
-                                </path>
-                                <path fill="#FFF"
-                                    d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z">
-                                </path>
-                            </svg>
-                        </a></li>
-                    <li><a onclick="copiarCorreo()" href="javascript:void(0)" id="enlaceCopiar" data-bs-toggle="popover"
-                            data-bs-placement="top" data-bs-content="¡Copiado!">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25"
-                                viewBox="0 0 48 48">
-                                <path fill="#e0e0e0"
-                                    d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z">
-                                </path>
-                                <path fill="#d9d9d9"
-                                    d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z">
-                                </path>
-                                <path fill="#eee" d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z">
-                                </path>
-                                <path fill="#e0e0e0"
-                                    d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z">
-                                </path>
-                                <path fill="#ca3737"
-                                    d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z">
-                                </path>
-                                <path fill="#f5f5f5"
-                                    d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z">
-                                </path>
-                                <path fill="#e84f4b"
-                                    d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="certificados/cv-daniel-nunez.pdf" target="_blank">
-                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                data-bs-trigger="hover focus" data-bs-content="Descargar CV">
-                                <img width="28" height="28" src="https://img.icons8.com/dusk/64/download--v1.png"
-                                    alt="download--v1" />
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+      <nav class="contenedor-aside">
+        <div class="img-text-aside d-flex flex-column align-items-center">
+          <img src="img/3.jpeg" alt="Imagen Personal" />
+          <p class="texto-aside">DANIEL NÚÑEZ</p>
+        </div>
+        <ul class="list-aside">
+          <li>
+            <img
+              alt="svgImg"
+              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAsMCwyNTYsMjU2IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTI0Ljk2Mjg5LDEuMDU0NjljLTAuMjA5ODcsMC4wMDcyNCAtMC40MTIxNCwwLjA4MDM2IC0wLjU3ODEyLDAuMjA4OThsLTIzLDE3Ljk0NzI3Yy0wLjQzNTc5LDAuMzM5NzggLTAuNTEzNjEsMC45Njg1MSAtMC4xNzM4MywxLjQwNDNjMC4zMzk3OCwwLjQzNTc5IDAuOTY4NTEsMC41MTM2MSAxLjQwNDMsMC4xNzM4M2wxLjM4NDc3LC0xLjA4MDA4djI2LjI5MTAyYzAuMDAwMDYsMC41NTIyNiAwLjQ0Nzc0LDAuOTk5OTQgMSwxaDEzLjgzMjAzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDExLjY3MzgzYzAuMTA3OTksMC4wMTc4NSAwLjIxODE4LDAuMDE3ODUgMC4zMjYxNywwaDEzLjg0MThjMC41NTIyNiwtMC4wMDAwNiAwLjk5OTk0LC0wLjQ0Nzc0IDEsLTF2LTI2LjI5MTAybDEuMzg0NzcsMS4wODAwOGMwLjI4MTksMC4yMTk4MyAwLjY1OTY3LDAuMjcyNTcgMC45OTEsMC4xMzgzM2MwLjMzMTMzLC0wLjEzNDIzIDAuNTY1ODYsLTAuNDM1MDQgMC42MTUyNiwtMC43ODkxYzAuMDQ5NCwtMC4zNTQwNiAtMC4wOTM4NiwtMC43MDc1NyAtMC4zNzU3OSwtMC45MjczNmwtNy42MTUyMywtNS45NDE0MXYtNy4yNjk1M2gtNnYyLjU4NTk0bC05LjM4NDc3LC03LjMyMjI3Yy0wLjE4NjA3LC0wLjE0NDI4IC0wLjQxNzA3LC0wLjIxODI4IC0wLjY1MjM0LC0wLjIwODk4ek0yNSwzLjMyMjI3bDE5LDE0LjgyNjE3djI2Ljg1MTU2aC0xMnYtMTloLTE0djE5aC0xMnYtMjYuODUxNTZ6TTM3LDhoMnYzLjcwODk4bC0yLC0xLjU2MjV6TTIwLDI4aDEwdjE3aC0xMHoiPjwvcGF0aD48L2c+PC9nPgo8L3N2Zz4="
+            />
+            <a href="#sectionPrincipal">Home</a>
+          </li>
+          <li>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB4ElEQVR4nOXVu49NURQG8OsVr5EhEo9GzIyCgjFGRIxHJaJQGkGlEIlCIx6TjGIU/gRBgoKJKIkgCn8CyXiETuKRofBoCIqfbFmSMyf37rOjkljNvWft79tr7bX2/lar9V8YurAfV/AEk/gZvxO4HOtdf7v5WXzALRzFOizBTCxFf/hvB24M80sDDOIlrqGvkLMK1/ECG5rAQ5HVcNmZpxr2BX9LLpv32NkW0PqNmYc1uR5gV+zT227xAY5nyOfwA2/wFWcy2JO4X3dux/PU1EwZJv9kh4EI2PbUcTlSf7ZWnZdwIpPZOK7WfCmpsQznFC5UHU/TFc0QFmBu5bs/3svBDCdhJqqOL+juRKiR+/AWFzEtg+vG56rjGxYVBJiFZ7iDGQ3YhfUg6fENFgTZhu+FCa2vlytp0EgBcS1Gm3CBPY3zVccOvOp0hSu4FdhbWNZUnaH6wr0kig3kA1AQZAR32y0khX2NPQ3q3NsQYHc83J5OgE14lyS8KdvMSZNAbm4C9sRrPpIFVgyrcTN4A60Si1lyKP5Pj+m3EYujqcvT3MCx6GUqz2hVFZoCzAmpXobZuBGy8wgfQxhTSR+H5g2nEVC0eU3YHuJwXMPx4rHaKguwEp9Cm1KNp97zf9l+AfzKkFH1eqRPAAAAAElFTkSuQmCC"
+            />
+            <a href="#aboutMe">Sobre mí</a>
+          </li>
+          <li>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA8klEQVR4nO3VMUoDQRTG8T1B0JDCOjcIpEmZQ1inUHIFT2BqhTQWWos5QBqtbQOiXSrBykqxSPWTgS1CeBMYmC754F/s996+b3kDO01zVE2hgxmeApLfqRHygEecByT/vkbIGwaZ2iDVS4aN8Ir1Dht8Bv669TeBn+aMopAPTNCvwATvUcgfTkrXGSnNSfOiwjHkgNfVy7y0FGuZ6e/tC1ngKuALY5xuMW79qH+xLyT98O4CvjHc6R+2ftQ/Kz4TrHCN6RbpeVXt4HGZ+eKL0pBfdJsKQhc/UeEF88y9Ucocz1HIGW4zN2ApN2leja00h6d/QuXU83U2Id4AAAAASUVORK5CYII="
+            />
+            <a href="#portfolio">Mi portafolio</a>
+          </li>
+          <li>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nO3TsUoDQRDG8UOwSW8hpkqdRvA18hSaQmwDViJYSaq0kiYI9sHnsEhhp21KtYhF0viThQmE43IkIduIA8twM9/uf2b2tij+LZfhGFfJ5zp8gA+Mww/2AsMR7vGFB5zUxfdyeNl2gu1aoU327aX9ouYc9KsuEoc4RQfn6OF6ZfUi3gnd4ZofpV8JwQgzTPCMYVRYXsPIT0I/qoSsBK3AkjW2HFUj9g3W/uIhWFZgxztR+35StiS+jYf3gik+sYjcIr6nkR+Hvr64EiTN9xuP6OIMreUIYzStiHdDl/SzbSBt3FR0Mo9O5hWdJH17Y0g2kxuCZoyhmRPyiie854S84TL5nJAL/CSfE3KAu+SzQYq/YL/QJXQ6HlKs4wAAAABJRU5ErkJggg=="
+            />
+            <a href="#resumen">Resumen</a>
+          </li>
+          <li>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVR4nL3VsUoDQRSF4RWJhZWdpYV2IaJBsbUMYmtlaS8WgYAPIAtprFLlBVJbWfkAthaijaWI4CN8MrKEMKyQSTJ74Swzd86dfzlbbFE0UdhDH4MM6mM3QN4xQplBI7wFiMxJ+XtkimpQaQopM0pzcRXpg2u4zA05xUtuyATXK4HgDCdRbxs/2Kr2XfSSIWjjEa84js5uMZ7ZH1W+4G/PBcEQX7hBKzpbx0e4OOq3Kn+YGy4LOcdzzdumQWriOpzpP+Aq8naT44oMPXSq9Q6+sRl5Ogt9+H/Md7ifx7sQBBv4rItjlZALPKUCUiH7OMgKWaY0CtHAn7HMrZxJTesXBKaE30BM5hgAAAAASUVORK5CYII="
+            />
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVR4nMXWz4uNURgH8EEuC+RHkmRhWMxiRn4uKVmym/zoRjJ/gEySjTIKaVgxhK2xVGwnrNQsWIjBQrFFoZT1R6eeW6fTmZl771w5dRbn+z7n+Z73e77P8759ff9jYB1GcfBfEWzHFzzEV+ypxGzBOVyYYx7DohrBfnzDkVgfxwyWFXEfcR/X55jvE1FJsC1OfqDAH+NqgWlDkTFcKsHzmKgEbwjyXV2QjJXgaUzOsuEEXveCJMn1A43Khs3p2YJJ4sFLDFfwe7jRK5LDeIclGTYYd7I6wz4l0rDqEHZWLPwGzdlO8CIVYrZuho2XZ9hWXMTbSPgBdwoLN6t1Egn68R0DGTYZc3GG7cVv/MG1+eSrEY3E6VbFuoEp3Co6w1ns6JggS5Je/0nrfrASr3Cl66QVkqVx+gctbbE+iG7n0i2UaAWmMV5gU3iUzIA1uIlfqWC7ki+SJDuOZ2/UiC49E/ZOdbQJJ2N9uVbU7RBNh3R5DSWbDhaxG+Muk713d0qUZHqGpy3XzRPfrHX1ds1wN+w90EZ8kvRMRyTZ5pEo2NFcviLmKD5jbVckWWd4Hr1uOP96JoniCzvU14uBQ9G9f0brmYi72NcTgoIsNc1T8YPR33OCdsZfAuTmwuEe9I8AAAAASUVORK5CYII="
+            />
+            <a href="#contacto">Contacto</a>
+          </li>
+        </ul>
+        <div class="aside-footer">
+          <hr />
+          <ul class="list-footer">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#0288D1"
+                    d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"
+                  ></path>
+                  <path
+                    fill="#FFF"
+                    d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                onclick="copiarCorreo()"
+                href="javascript:void(0)"
+                id="enlaceCopiar"
+                data-bs-toggle="popover"
+                data-bs-placement="top"
+                data-bs-content="¡Copiado!"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#e0e0e0"
+                    d="M5.5,40.5h37c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11v26C2,38.933,3.567,40.5,5.5,40.5z"
+                  ></path>
+                  <path
+                    fill="#d9d9d9"
+                    d="M26,40.5h16.5c1.933,0,3.5-1.567,3.5-3.5V11c0-1.933-1.567-3.5-3.5-3.5h-37C3.567,7.5,2,9.067,2,11L26,40.5z"
+                  ></path>
+                  <path
+                    fill="#eee"
+                    d="M6.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L6.745,40.5z"
+                  ></path>
+                  <path
+                    fill="#e0e0e0"
+                    d="M25.745,40.5H42.5c1.933,0,3.5-1.567,3.5-3.5V11.5L18.771,31.616L25.745,40.5z"
+                  ></path>
+                  <path
+                    fill="#ca3737"
+                    d="M42.5,9.5h-37C3.567,9.5,2,9.067,2,11v26c0,1.933,1.567,3.5,3.5,3.5H7V12h34v28.5h1.5c1.933,0,3.5-1.567,3.5-3.5V11C46,9.067,44.433,9.5,42.5,9.5z"
+                  ></path>
+                  <path
+                    fill="#f5f5f5"
+                    d="M42.5,7.5H24H5.5C3.567,7.5,2,9.036,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.036,44.433,7.5,42.5,7.5z"
+                  ></path>
+                  <path
+                    fill="#e84f4b"
+                    d="M43.246,7.582L24,21L4.754,7.582C3.18,7.919,2,9.297,2,11c0,1.206,1.518,2.258,1.518,2.258L24,27.756l20.482-14.497c0,0,1.518-1.053,1.518-2.258C46,9.297,44.82,7.919,43.246,7.582z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="certificados/cv-daniel-nunez.pdf" target="_blank">
+                <span
+                  class="d-inline-block"
+                  tabindex="0"
+                  data-bs-toggle="popover"
+                  data-bs-trigger="hover focus"
+                  data-bs-content="Descargar CV"
+                >
+                  <img
+                    width="28"
+                    height="28"
+                    src="https://img.icons8.com/dusk/64/download--v1.png"
+                    alt="download--v1"
+                  />
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </aside>
     <main>
-        <section class="sectionPrincipal" id="sectionPrincipal">
-            <div class="divPrincipal">
-                <img src="img/fotoPersonal2.jpeg" alt="">
-                <!--<p><span>T</span><span>é</span><span>c</span><span>n</span><span>i</span><span>c</span><span>o </span> <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>i</span><span>o</span><span>r </span> <span>e</span><span>n </span> <span>D</span><span>e</span><span>s</span><span>a</span><span>r</span><span>r</span><span>o</span><span>l</span><span>l</span><span>o </span><span> </span><span>d</span><span>e </span> <span>A</span><span>p</span><span>l</span><span>i</span><span>c</span><span>a</span><span>c</span><span>i</span><span>o</span><span>n</span><span>e</span><span>s </span> <span>M</span><span>u</span><span>l</span><span>t</span><span>i</span><span>p</span><span>l</span><span>a</span><span>t</span><span>a</span><span>f</span><span>o</span><span>r</span><span>m</span><span>a</span></p>-->
-            </div>
+      <section class="sectionPrincipal" id="sectionPrincipal">
+        <div class="divPrincipal">
+          <img src="img/3.jpeg" alt="" />
+          <!--<p><span>T</span><span>é</span><span>c</span><span>n</span><span>i</span><span>c</span><span>o </span> <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>i</span><span>o</span><span>r </span> <span>e</span><span>n </span> <span>D</span><span>e</span><span>s</span><span>a</span><span>r</span><span>r</span><span>o</span><span>l</span><span>l</span><span>o </span><span> </span><span>d</span><span>e </span> <span>A</span><span>p</span><span>l</span><span>i</span><span>c</span><span>a</span><span>c</span><span>i</span><span>o</span><span>n</span><span>e</span><span>s </span> <span>M</span><span>u</span><span>l</span><span>t</span><span>i</span><span>p</span><span>l</span><span>a</span><span>t</span><span>a</span><span>f</span><span>o</span><span>r</span><span>m</span><span>a</span></p>-->
+        </div>
+      </section>
+      <section class="introduction">
+        <div class="divIntroduction">
+          <p>HOLA!</p>
+          <h1>SOY DANIEL</h1>
+          <p class="pDescription">
+            Apasionado desarrollador en constante búsqueda de conocimiento,
+            forjando mi camino hacia el futuro con cada esfuerzo.
+          </p>
 
-        </section>
-        <section class="introduction">
-            <div class="divIntroduction">
-                <p>HOLA!</p>
-                <h1>SOY DANIEL</h1>
-                <P class="pDescription">Apasionado desarrollador en constante búsqueda de conocimiento, forjando mi
-                    camino hacia el futuro
-                    con cada esfuerzo.</P>
+          <div class="btnIntroduction">
+            <a href="#contacto" class="btnContactame">Contactame</a>
+            <a
+              href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
+              class="btnLeerMas"
+              target="_blank"
+              >Leer más</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="aboutMe" id="aboutMe">
+        <div class="divAboutMe">
+          <div class="title">
+            <div class="line"></div>
+            <p>WHO AM I ?</p>
+          </div>
+          <h2>SOBRE <span>MÍ</span></h2>
+          <div class="descriptionHabilities">
+            <div class="divPDesciption">
+              <p>
+                Soy una persona apasionada por la informática y el desarrollo de
+                software. Poseo habilidades técnicas en Python, PHP, .NET
+                Framework, Spring Boot, entre otras, junto con experiencia en
+                tecnologías como Django y Bootstrap. Mi enfoque autodidacta se
+                refleja en la creación activa de proyectos para práctica y
+                mejora de mis habilidades. Mi dedicación y versatilidad me
+                convierten en un candidato comprometido en busca de una carrera
+                en el mundo de la programación.
+              </p>
+            </div>
+            <div class="info">
+              <p><span>Edad</span> 19</p>
+              <p><span>Residencia</span> Valencia, España</p>
+              <p>
+                <span>e-mail</span> dnunez200508@gmail.com
+                <a
+                  onclick="copiarCorreo()"
+                  href="javascript:void(0)"
+                  id="enlaceCopiar"
+                  data-bs-toggle="popover"
+                  data-bs-placement="top"
+                  data-bs-content="¡Copiado!"
+                  ><img
+                    width="24"
+                    height="24"
+                    src="https://img.icons8.com/material/24/copy--v1.png"
+                    alt="copy--v1"
+                /></a>
+              </p>
+              <p><span>Teléfono</span> +34 643 31 93 95</p>
+            </div>
+          </div>
+          <div class="title">
+            <div class="line2"></div>
+          </div>
+          <h2>SOFT <span>SKILLS</span></h2>
+          <div class="habilities">
+            <div class="habilitiesItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/3d-fluency/80/group--v2.png"
+                alt="group--v2"
+              />
+              <h3>Trabajo en Equipo</h3>
+            </div>
+            <div class="habilitiesItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/arcade/80/proactivity.png"
+                alt="proactivity"
+              />
+              <h3>Proactividad</h3>
+            </div>
+            <div class="habilitiesItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/arcade/64/meeting-room.png"
+                alt="meeting-room"
+              />
+              <h3>Co-creación</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItemSecundary">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/external-parzival-1997-flat-parzival-1997/80/external-stress-bully-society-parzival-1997-flat-parzival-1997.png"
+                alt="external-stress-bully-society-parzival-1997-flat-parzival-1997"
+              />
+              <h3>Tolerancia a la Presión</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItemSecundary">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/color/80/listening-skin-type-3.png"
+                alt="listening-skin-type-3"
+              />
+              <h3>Escucha Activa y Empatia</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItemSecundary">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/80/external-resilience-modern-dating-flaticons-lineal-color-flat-icons.png"
+                alt="external-resilience-modern-dating-flaticons-lineal-color-flat-icons"
+              />
+              <h3>Resiliencia</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItem2">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/fluency/80/talk-male.png"
+                alt="talk-male"
+              />
+              <h3>Comunicación</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItem2">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/plasticine/80/report-card.png"
+                alt="report-card"
+              />
+              <h3>Orientación a Resultados</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItem2">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/external-kmg-design-flat-kmg-design/80/external-versatile-human-resources-kmg-design-flat-kmg-design.png"
+                alt="external-versatile-human-resources-kmg-design-flat-kmg-design"
+              />
+              <h3>Polivalencia y Versatilidad</h3>
+            </div>
+            <div class="habilitiesItem habilitiesItem2">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/external-jumpicon-solid-gradient-ayub-irawan/80/external-Adaptation-crisis-management-jumpicon-(solid-gradient)-jumpicon-solid-gradient-ayub-irawan-2.png"
+                alt="external-Adaptation-crisis-management-jumpicon-(solid-gradient)-jumpicon-solid-gradient-ayub-irawan-2"
+              />
+              <h3>Adaptación al Cambio</h3>
+            </div>
+          </div>
 
-                <div class="btnIntroduction">
-                    <a href="#contacto" class="btnContactame">Contactame</a>
-                    <a href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
-                        class="btnLeerMas" target="_blank">Leer más</a>
-                </div>
+          <div class="divVerMas">
+            <button id="btnMostrar" onclick="verMas()" class="btnVerMas">
+              Ver Más
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="portfolio" id="portfolio">
+        <div class="d-flex justify-content-center">
+          <hr class="hrGeneral" />
+        </div>
+        <div class="myWorks">
+          <div class="title">
+            <div class="line"></div>
+            <p>TAKE A LOOK AT</p>
+          </div>
+          <div class="linksOptions d-flex justify-content-between flex-wrap">
+            <h2>MIS <span>PROYECTOS</span></h2>
+            <div class="btnLinks d-flex justify-content-evenly flex-wrap">
+              <a
+                href="javascript:void(0);"
+                class="btnContactame"
+                onclick="works('all')"
+                >All</a
+              >
+              <a
+                href="javascript:void(0);"
+                class="btnContactame"
+                onclick="works('static')"
+                >Statics Webs</a
+              >
+              <a
+                href="javascript:void(0);"
+                class="btnContactame"
+                onclick="works('django')"
+                >Proyecto de grado</a
+              >
             </div>
-        </section>
-        <section class="aboutMe" id="aboutMe">
-            <div class="divAboutMe">
-                <div class="title">
-                    <div class="line"></div>
-                    <p>WHO AM I ?</p>
-                </div>
-                <h2>SOBRE <span>MÍ</span></h2>
-                <div class="descriptionHabilities">
-                    <div class="divPDesciption">
-                        <p>Soy una persona apasionada por la informática y el desarrollo de software. Poseo habilidades
-                            técnicas en Python, PHP, .NET Framework, Spring Boot, entre otras, junto con experiencia en
-                            tecnologías como Django y Bootstrap. Mi enfoque autodidacta se refleja en la creación activa
-                            de proyectos para práctica y mejora de mis habilidades. Mi dedicación y versatilidad me
-                            convierten en un candidato comprometido en busca de una carrera en el mundo de la
-                            programación.
-                        </p>
-                    </div>
-                    <div class="info">
-                        <p><span>Edad</span> 19</p>
-                        <p><span>Residencia</span> Valencia, España</p>
-                        <p><span>e-mail</span> dnunez200508@gmail.com <a onclick="copiarCorreo()"
-                                href="javascript:void(0)" id="enlaceCopiar" data-bs-toggle="popover"
-                                data-bs-placement="top" data-bs-content="¡Copiado!"><img width="24" height="24"
-                                    src="https://img.icons8.com/material/24/copy--v1.png" alt="copy--v1" /></a></p>
-                        <p><span>Teléfono</span> +34 643 31 93 95</p>
-                    </div>
-                </div>
-                <div class="title">
-                    <div class="line2"></div>
-                </div>
-                <h2>SOFT <span>SKILLS</span></h2>
-                <div class="habilities">
-                    <div class="habilitiesItem">
-                        <img width="80" height="80" src="https://img.icons8.com/3d-fluency/80/group--v2.png"
-                            alt="group--v2" />
-                        <h3>Trabajo en Equipo</h3>
-                    </div>
-                    <div class="habilitiesItem">
-                        <img width="80" height="80" src="https://img.icons8.com/arcade/80/proactivity.png"
-                            alt="proactivity" />
-                        <h3>Proactividad</h3>
-                    </div>
-                    <div class="habilitiesItem">
-                        <img width="80" height="80" src="https://img.icons8.com/arcade/64/meeting-room.png"
-                            alt="meeting-room" />
-                        <h3>Co-creación</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItemSecundary">
-                        <img width="80" height="80"
-                            src="https://img.icons8.com/external-parzival-1997-flat-parzival-1997/80/external-stress-bully-society-parzival-1997-flat-parzival-1997.png"
-                            alt="external-stress-bully-society-parzival-1997-flat-parzival-1997" />
-                        <h3>Tolerancia a la Presión</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItemSecundary">
-                        <img width="80" height="80" src="https://img.icons8.com/color/80/listening-skin-type-3.png"
-                            alt="listening-skin-type-3" />
-                        <h3>Escucha Activa y Empatia</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItemSecundary">
-                        <img width="80" height="80"
-                            src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/80/external-resilience-modern-dating-flaticons-lineal-color-flat-icons.png"
-                            alt="external-resilience-modern-dating-flaticons-lineal-color-flat-icons" />
-                        <h3>Resiliencia</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItem2">
-                        <img width="80" height="80" src="https://img.icons8.com/fluency/80/talk-male.png"
-                            alt="talk-male" />
-                        <h3>Comunicación</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItem2">
-                        <img width="80" height="80" src="https://img.icons8.com/plasticine/80/report-card.png"
-                            alt="report-card" />
-                        <h3>Orientación a Resultados</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItem2">
-                        <img width="80" height="80"
-                            src="https://img.icons8.com/external-kmg-design-flat-kmg-design/80/external-versatile-human-resources-kmg-design-flat-kmg-design.png"
-                            alt="external-versatile-human-resources-kmg-design-flat-kmg-design" />
-                        <h3>Polivalencia y Versatilidad</h3>
-                    </div>
-                    <div class="habilitiesItem habilitiesItem2">
-                        <img width="80" height="80"
-                            src="https://img.icons8.com/external-jumpicon-solid-gradient-ayub-irawan/80/external-Adaptation-crisis-management-jumpicon-(solid-gradient)-jumpicon-solid-gradient-ayub-irawan-2.png"
-                            alt="external-Adaptation-crisis-management-jumpicon-(solid-gradient)-jumpicon-solid-gradient-ayub-irawan-2" />
-                        <h3>Adaptación al Cambio</h3>
-                    </div>
-                </div>
-
-                <div class="divVerMas">
-                    <button id="btnMostrar" onclick="verMas()" class="btnVerMas">Ver Más</button>
-                </div>
+          </div>
+          <div class="works">
+            <div class="divImg static">
+              <a
+                href="https://targetcodesp.vercel.app/index.html"
+                target="_blank"
+                ><img src="img/targetCodes.PNG" alt=""
+              /></a>
             </div>
-        </section>
-        <section class="portfolio" id="portfolio">
-            <div class="d-flex justify-content-center">
-                <hr class="hrGeneral">
+            <div class="divImg static">
+              <a href="https://silentium.vercel.app/" target="_blank"
+                ><img src="img/silentiumVercel.PNG" alt=""
+              /></a>
             </div>
-            <div class="myWorks">
-                <div class="title">
-                    <div class="line"></div>
-                    <p>TAKE A LOOK AT</p>
-                </div>
-                <div class="linksOptions d-flex justify-content-between flex-wrap">
-                    <h2>MIS <span>PROYECTOS</span></h2>
-                    <div class="btnLinks d-flex justify-content-evenly flex-wrap">
-                        <a href="javascript:void(0);" class="btnContactame" onclick="works('all')">All</a>
-                        <a href="javascript:void(0);" class="btnContactame" onclick="works('static')">Statics Webs</a>
-                        <a href="javascript:void(0);" class="btnContactame" onclick="works('django')">Web Apps</a>
-                    </div>
-                </div>
-                <div class="works">
-                    <div class="divImg static">
-                        <a href="https://targetcodesp.vercel.app/index.html" target="_blank"><img
-                                src="img/targetCodes.PNG" alt=""></a>
-                    </div>
-                    <div class="divImg static">
-                        <a href="https://silentium.vercel.app/" target="_blank"><img src="img/silentiumVercel.PNG"
-                                alt=""></a>
-                    </div>
-                    <div class="divImg django">
-                        <a href="https://render-silentiumdjango-app.onrender.com/" target="_blank"><img
-                                src="img/silentiumDjango.PNG" alt=""></a>
-                    </div>
-                </div>
+            <div class="divImg django">
+              <a href="https://learnleap.es" target="_blank"
+                ><img src="img/learnleap.PNG" alt=""
+              /></a>
             </div>
-        </section>
-        <section class="resumen" id="resumen">
-            <div class="myWorks">
-                <div class="title">
-                    <div class="line"></div>
-                    <p>MY RESUME </p>
+          </div>
+        </div>
+      </section>
+      <section class="resumen" id="resumen">
+        <div class="myWorks">
+          <div class="title">
+            <div class="line"></div>
+            <p>MY RESUME</p>
+          </div>
+          <div class="linksOptions d-flex justify-content-between flex-wrap">
+            <h2>MY <span>EXPERTISES</span></h2>
+          </div>
+          <div class="experience">
+            <h3>Mi experiencia</h3>
+            <div class="experiencesDiv">
+              <div class="individualExperience">
+                <p class="empresa">Laberit Sistemas</p>
+                <div class="infoExperience">
+                  <h4>Estudiante en Prácticas</h4>
+                  <p>
+                    Proceso formativo en un entorno de trabajo rea en el que
+                    adquirí habilidades como programador con tecnologias como
+                    .NET framework, .NET MAUI, SpringBoot, Tomcat, entre otras.
+                  </p>
                 </div>
-                <div class="linksOptions d-flex justify-content-between flex-wrap">
-                    <h2>MY <span>EXPERTISES</span></h2>
+                <div class="divDuration d-flex justify-content-center">
+                  <p class="duration">03/2024 - 05/2024</p>
                 </div>
-                <div class="experience">
-                    <h3>Mi experiencia</h3>
-                    <div class="experiencesDiv">
-                        <div class="individualExperience ">
-                            <p class="empresa">Laberit Sistemas</p>
-                            <div class="infoExperience">
-                                <h4>Estudiante en Prácticas</h4>
-                                <p>Proceso formativo en el que adquirí habilidades como programador con tecnologias como
-                                    .NET framework, .NET MAUI, SpringBoot, Tomcat, entre otras.</p>
-                            </div>
-                            <div class="divDuration d-flex justify-content-center">
-                                <p class="duration">03/2024 - 05/2024</p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <hr class="hrGeneral">
-                        </div>
-                        <div class="individualExperience">
-                            <p class="empresa">Domino's Pizza</p>
-                            <div class="infoExperience">
-                                <h4>Auxiliar de Tienda</h4>
-                                <p>Cocinero de medio tiempo en Domino's Pizza, capacitado para ajustarse dinámicamente
-                                    al entorno laboral y resolver los desafíos que surgen en el día a día.</p>
-                            </div>
-                            <div class="divDuration d-flex justify-content-center">
-                                <p class="duration">11/2023 - PRESENT</p>
-                            </div>
-                        </div>
-                        <div class="individualExperience">
-                            <p class="empresa">SmartBox</p>
-                            <div class="infoExperience">
-                                <h4>Promotor de Ventas</h4>
-                                <p>Responsable del abastecimiento del puesto y dispuesto a resolver dudas de los
-                                    clientes desarrollando habilidades comunicativas, de empatia y de proactivaidad.</p>
-                            </div>
-                            <div class="divDuration d-flex justify-content-center">
-                                <p class="duration duration2">12/2023 - 01/2024</p>
-                            </div>
-                        </div>
-                        <div class="individualExperience">
-                            <p class="empresa">Jardines de la Cartuja</p>
-                            <div class="infoExperience">
-                                <h4>Camarero y Bartender</h4>
-                                <p>Camarero y Barman en eventos como bodas, graduaciones, comuniones, etc. Trabajando
-                                    bajo presión y resolviendo problemas de forma rapida.</p>
-                            </div>
-                            <div class="divDuration d-flex justify-content-center">
-                                <p class="duration duration3">05/2023 - 08/2023</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Education-->
-                <div class="education" id="education">
-                    <div class="generalEducation">
-                        <h3>Mi educación</h3>
-                        <div class="divEducation">
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Educación Oficial
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div
-                                                class="individualEducation d-flex justify-content-between align-items-center">
-                                                <p class="empresa">Campus Camara FP</p>
-                                                <div class="infoExperience">
-                                                    <h4>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma
-                                                    </h4>
-                                                </div>
-                                                <div class="divDuration d-flex justify-content-center">
-                                                    <p class="duration duration3">09/2022 - ACTUALIDAD</p>
-
-                                                </div>
-                                            </div>
-                                            <hr class="hrEducation">
-                                            <div
-                                                class="individualEducation d-flex justify-content-between align-items-center">
-                                                <p class="empresa">Colegio Bilingue San Juan de Dios</p>
-                                                <div class="infoExperience">
-                                                    <h4>Bachiller</h4>
-                                                </div>
-                                                <div class="divDuration d-flex justify-content-center">
-                                                    <p class="duration duration2">2021</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            Educación Complementaria
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse show"
-                                        data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body row justify-content-evenly">
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="24" height="24"
-                                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
-                                                    alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Python Begginers</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Python Beginners.pdf" target="_blank"><img
-                                                                width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="24" height="24"
-                                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
-                                                    alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Intermediate Python</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Intermediate Python.pdf"
-                                                            target="_blank"><img width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="24" height="24"
-                                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
-                                                    alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Python Data Structures</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Python DataStructures.pdf"
-                                                            target="_blank"><img width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="24" height="24"
-                                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
-                                                    alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Python Core</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Python Core.pdf" target="_blank"><img
-                                                                width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="44" height="44"
-                                                    src="https://img.icons8.com/3d-fluency/94/java-coffee-cup-logo.png"
-                                                    alt="java-coffee-cup-logo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Java</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Java.pdf" target="_blank"><img width="32"
-                                                                height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="34" height="34"
-                                                    src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab.png"
-                                                    alt="external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab" />
-                                                <div class="infoEduComple">
-                                                    <h4>SQL</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/SQL.pdf" target="_blank"><img width="32"
-                                                                height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="24" height="24"
-                                                    src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png"
-                                                    alt="external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Kotlin</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="#" target="_blank"><img width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="38" height="38"
-                                                    src="https://img.icons8.com/color/48/html-5--v1.png"
-                                                    alt="html-5--v1" />
-                                                <div class="infoEduComple">
-                                                    <h4>HTML</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/Html.pdf" target="_blank"><img width="32"
-                                                                height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="individualEducation d-flex justify-content-evenly align-items-center comple col-5">
-                                                <img width="38" height="38"
-                                                    src="https://img.icons8.com/nolan/64/c-sharp-logo.png"
-                                                    alt="c-sharp-logo" />
-                                                <div class="infoEduComple">
-                                                    <h4>Introduction to C#</h4>
-                                                    <p class="empresa course">SoloLearn</p>
-                                                </div>
-                                                <div class="divDownload d-flex justify-content-center">
-                                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                        data-bs-trigger="hover focus" data-bs-content="Ver Diploma">
-                                                        <a href="certificados/IntroductiontoC#.pdf"
-                                                            target="_blank"><img width="32" height="32"
-                                                                src="https://img.icons8.com/windows/32/view.png"
-                                                                alt="view" /></a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <hr class="hrGeneral" />
+              </div>
             </div>
-        </section>
-        <section class="technologies" id="skills">
-            <div class="d-flex justify-content-center">
-                <hr class="hrGeneral">
-            </div>
-            <div class="generalTechno">
-                <div class="title">
-                    <div class="line"></div>
-                    <p>WHAT I KNOW?</p>
-                </div>
-                <div class="linksOptions d-flex justify-content-between flex-wrap">
-                    <h2>Tecno<span>logías</span></h2>
-                </div>
-                <div class="skills row justify-content-evenly">
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Python</p>
-                            <img width="24" height="24"
-                                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
-                                alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%">60%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Django</p>
-                            <img width="24" height="24"
-                                src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-shadow-tal-revivo.png"
-                                alt="external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-shadow-tal-revivo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 55%">55%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Java</p>
-                            <img width="34" height="34"
-                                src="https://img.icons8.com/3d-fluency/94/java-coffee-cup-logo.png"
-                                alt="java-coffee-cup-logo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%">80%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>C# .NET</p>
-                            <img width="34" height="34" src="https://img.icons8.com/nolan/64/c-sharp-logo.png"
-                                alt="c-sharp-logo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%">65%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Kotlin</p>
-                            <img width="24" height="24"
-                                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png"
-                                alt="external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 40%">40%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>SQL</p>
-                            <img width="34" height="34"
-                                src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab.png"
-                                alt="external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%">80%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Html</p>
-                            <img width="38" height="38" src="https://img.icons8.com/color/48/html-5--v1.png"
-                                alt="html-5--v1" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%">90%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>CSS</p>
-                            <img width="38" height="38" src="https://img.icons8.com/fluency/48/css3.png" alt="css3" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%">70%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>JavaScript</p>
-                            <img width="38" height="38" src="https://img.icons8.com/color/38/javascript--v1.png"
-                                alt="javascript--v1" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 30%">30%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Git</p>
-                            <img width="48" height="48" src="https://img.icons8.com/color/48/git.png" alt="git" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 50%">50%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>bootstrap</p>
-                            <img width="38" height="38" src="https://img.icons8.com/color/48/bootstrap--v2.png"
-                                alt="bootstrap--v2" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%">60%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="individualSkill col-6">
-                        <div class="titleSkill d-flex">
-                            <p>Php</p>
-                            <img width="38" height="38" src="https://img.icons8.com/dusk/38/php-logo.png"
-                                alt="php-logo" />
-                        </div>
-                        <div class="progress" role="progressbar" aria-label="Animated striped example"
-                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 40%">40%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="contact" id="contacto">
-            <div class="d-flex justify-content-center">
-                <hr class="hrGeneral">
-            </div>
-            <div class="generalContact">
-                <div class="title">
-                    <div class="line"></div>
-                    <p>SAY HELLO</p>
-                </div>
-                <div class="linksOptions d-flex justify-content-between flex-wrap">
-                    <h2><span>Conctacto</span></h2>
-                </div>
-                <div class="divContact d-flex justify-content-evenly flex-wrap">
-                    <div class="habilitiesItem contacItem">
-                        <img width="80" height="80" src="https://img.icons8.com/pastel-glyph/80/phone-message--v1.png"
-                            alt="phone-message--v1" />
-                        <h3><u><a href="javascript:void(0)">+34 643939395</a></u></h3>
-                    </div>
-                    <div class="habilitiesItem contacItem">
-                        <img width="80" height="80" src="https://img.icons8.com/ultraviolet/80/new-post.png"
-                            alt="new-post" />
-                        <h3>
-                            <p>
-                                <a onclick="copiarCorreo()" href="javascript:void(0)" id="enlaceCopiar"
-                                    data-bs-toggle="popover" data-bs-placement="top" data-bs-content="¡Copiado!">
-                                    dnunez200508@gmail.com
-                                </a>
+          </div>
+          <!--Education-->
+          <div class="education" id="education">
+            <div class="generalEducation">
+              <h3>Mi educación</h3>
+              <div class="divEducation">
+                <div
+                  class="accordion accordion-flush"
+                  id="accordionFlushExample"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        Educación Oficial
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body">
+                        <div
+                          class="individualEducation d-flex justify-content-between align-items-center"
+                        >
+                          <p class="empresa">Campus Camara FP</p>
+                          <div class="infoExperience">
+                            <h4>
+                              Técnico Superior en Desarrollo de Aplicaciones
+                              Multiplataforma
+                            </h4>
+                          </div>
+                          <div
+                            class="divDuration d-flex justify-content-center"
+                          >
+                            <p class="duration duration3">
+                              09/2022 - ACTUALIDAD
                             </p>
-                        </h3>
+                          </div>
+                        </div>
+                        <hr class="hrEducation" />
+                        <div
+                          class="individualEducation d-flex justify-content-between align-items-center"
+                        >
+                          <p class="empresa">
+                            Colegio Bilingue San Juan de Dios
+                          </p>
+                          <div class="infoExperience">
+                            <h4>Bachiller</h4>
+                          </div>
+                          <div
+                            class="divDuration d-flex justify-content-center"
+                          >
+                            <p class="duration duration2">2021</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="habilitiesItem contacItem">
-                        <img width="80" height="80" src="https://img.icons8.com/fluency/80/linkedin.png"
-                            alt="linkedin" />
-                        <h3><a href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
-                                target="_blank">Linkedin</a></h3>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseTwo"
+                      >
+                        Educación Complementaria
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseTwo"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body row justify-content-evenly">
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="24"
+                            height="24"
+                            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
+                            alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Python Begginers</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a
+                                href="certificados/Python Beginners.pdf"
+                                target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="24"
+                            height="24"
+                            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
+                            alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Intermediate Python</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a
+                                href="certificados/Intermediate Python.pdf"
+                                target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="24"
+                            height="24"
+                            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
+                            alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Python Data Structures</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a
+                                href="certificados/Python DataStructures.pdf"
+                                target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="24"
+                            height="24"
+                            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
+                            alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Python Core</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a
+                                href="certificados/Python Core.pdf"
+                                target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="44"
+                            height="44"
+                            src="https://img.icons8.com/3d-fluency/94/java-coffee-cup-logo.png"
+                            alt="java-coffee-cup-logo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Java</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a href="certificados/Java.pdf" target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="34"
+                            height="34"
+                            src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab.png"
+                            alt="external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab"
+                          />
+                          <div class="infoEduComple">
+                            <h4>SQL</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a href="certificados/SQL.pdf" target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="24"
+                            height="24"
+                            src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png"
+                            alt="external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Kotlin</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a href="#" target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="38"
+                            height="38"
+                            src="https://img.icons8.com/color/48/html-5--v1.png"
+                            alt="html-5--v1"
+                          />
+                          <div class="infoEduComple">
+                            <h4>HTML</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a href="certificados/Html.pdf" target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          class="individualEducation d-flex justify-content-evenly align-items-center comple col-5"
+                        >
+                          <img
+                            width="38"
+                            height="38"
+                            src="https://img.icons8.com/nolan/64/c-sharp-logo.png"
+                            alt="c-sharp-logo"
+                          />
+                          <div class="infoEduComple">
+                            <h4>Introduction to C#</h4>
+                            <p class="empresa course">SoloLearn</p>
+                          </div>
+                          <div
+                            class="divDownload d-flex justify-content-center"
+                          >
+                            <span
+                              class="d-inline-block"
+                              tabindex="0"
+                              data-bs-toggle="popover"
+                              data-bs-trigger="hover focus"
+                              data-bs-content="Ver Diploma"
+                            >
+                              <a
+                                href="certificados/IntroductiontoC#.pdf"
+                                target="_blank"
+                                ><img
+                                  width="32"
+                                  height="32"
+                                  src="https://img.icons8.com/windows/32/view.png"
+                                  alt="view"
+                              /></a>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-        <section class="copyright">
-            <div class="d-flex justify-content-center">
-                <hr class="hrGeneral">
-            </div>
-            <div class="generalCopy">
-                <div class="contentCopy d-flex justify-content-center">
-                    <img width="25" height="25" src="https://img.icons8.com/ios/25/copyright.png" alt="copyright" />
-                    <p><i>Daniel Nuñez 2023 | Todos los derechos reservados</i></p>
+          </div>
+        </div>
+      </section>
+      <section class="technologies" id="skills">
+        <div class="d-flex justify-content-center">
+          <hr class="hrGeneral" />
+        </div>
+        <div class="generalTechno">
+          <div class="title">
+            <div class="line"></div>
+            <p>WHAT I KNOW?</p>
+          </div>
+          <div class="linksOptions d-flex justify-content-between flex-wrap">
+            <h2>Tecno<span>logías</span></h2>
+          </div>
+          <div class="skills row justify-content-evenly">
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Python</p>
+                <img
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo.png"
+                  alt="external-python-an-interpreted-high-level-general-purpose-programming-language-logo-color-tal-revivo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 60%"
+                >
+                  60%
                 </div>
+              </div>
             </div>
-        </section>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Django</p>
+                <img
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-shadow-tal-revivo.png"
+                  alt="external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-shadow-tal-revivo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 55%"
+                >
+                  55%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Java</p>
+                <img
+                  width="34"
+                  height="34"
+                  src="https://img.icons8.com/3d-fluency/94/java-coffee-cup-logo.png"
+                  alt="java-coffee-cup-logo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 80%"
+                >
+                  80%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>C# .NET</p>
+                <img
+                  width="34"
+                  height="34"
+                  src="https://img.icons8.com/nolan/64/c-sharp-logo.png"
+                  alt="c-sharp-logo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 65%"
+                >
+                  65%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Kotlin</p>
+                <img
+                  width="24"
+                  height="24"
+                  src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo.png"
+                  alt="external-kotlin-a-cross-platform-statically-typed-general-purpose-programming-language-with-type-inference-logo-color-tal-revivo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 40%"
+                >
+                  40%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>SQL</p>
+                <img
+                  width="34"
+                  height="34"
+                  src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab.png"
+                  alt="external-Cloud-Database-cloud-computing-vectorslab-flat-vectorslab"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 80%"
+                >
+                  80%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Html</p>
+                <img
+                  width="38"
+                  height="38"
+                  src="https://img.icons8.com/color/48/html-5--v1.png"
+                  alt="html-5--v1"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 90%"
+                >
+                  90%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>CSS</p>
+                <img
+                  width="38"
+                  height="38"
+                  src="https://img.icons8.com/fluency/48/css3.png"
+                  alt="css3"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 70%"
+                >
+                  70%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>JavaScript</p>
+                <img
+                  width="38"
+                  height="38"
+                  src="https://img.icons8.com/color/38/javascript--v1.png"
+                  alt="javascript--v1"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 30%"
+                >
+                  30%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Git</p>
+                <img
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/git.png"
+                  alt="git"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 50%"
+                >
+                  50%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>bootstrap</p>
+                <img
+                  width="38"
+                  height="38"
+                  src="https://img.icons8.com/color/48/bootstrap--v2.png"
+                  alt="bootstrap--v2"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 60%"
+                >
+                  60%
+                </div>
+              </div>
+            </div>
+            <div class="individualSkill col-6">
+              <div class="titleSkill d-flex">
+                <p>Php</p>
+                <img
+                  width="38"
+                  height="38"
+                  src="https://img.icons8.com/dusk/38/php-logo.png"
+                  alt="php-logo"
+                />
+              </div>
+              <div
+                class="progress"
+                role="progressbar"
+                aria-label="Animated striped example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  class="progress-bar progress-bar-striped progress-bar-animated"
+                  style="width: 40%"
+                >
+                  40%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contacto">
+        <div class="d-flex justify-content-center">
+          <hr class="hrGeneral" />
+        </div>
+        <div class="generalContact">
+          <div class="title">
+            <div class="line"></div>
+            <p>SAY HELLO</p>
+          </div>
+          <div class="linksOptions d-flex justify-content-between flex-wrap">
+            <h2><span>Conctacto</span></h2>
+          </div>
+          <div class="divContact d-flex justify-content-evenly flex-wrap">
+            <div class="habilitiesItem contacItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/pastel-glyph/80/phone-message--v1.png"
+                alt="phone-message--v1"
+              />
+              <h3>
+                <u><a href="javascript:void(0)">+34 643 31 93 95</a></u>
+              </h3>
+            </div>
+            <div class="habilitiesItem contacItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/ultraviolet/80/new-post.png"
+                alt="new-post"
+              />
+              <h3>
+                <p>
+                  <a
+                    onclick="copiarCorreo()"
+                    href="javascript:void(0)"
+                    id="enlaceCopiar"
+                    data-bs-toggle="popover"
+                    data-bs-placement="top"
+                    data-bs-content="¡Copiado!"
+                  >
+                    dnunez200508@gmail.com
+                  </a>
+                </p>
+              </h3>
+            </div>
+            <div class="habilitiesItem contacItem">
+              <img
+                width="80"
+                height="80"
+                src="https://img.icons8.com/fluency/80/linkedin.png"
+                alt="linkedin"
+              />
+              <h3>
+                <a
+                  href="https://www.linkedin.com/in/daniel-felipe-n%C3%BA%C3%B1ez-moreno-891654297/"
+                  target="_blank"
+                  >Linkedin</a
+                >
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="copyright">
+        <div class="d-flex justify-content-center">
+          <hr class="hrGeneral" />
+        </div>
+        <div class="generalCopy">
+          <div class="contentCopy d-flex justify-content-center">
+            <img
+              width="25"
+              height="25"
+              src="https://img.icons8.com/ios/25/copyright.png"
+              alt="copyright"
+            />
+            <p><i>Daniel Nuñez 2023 | Todos los derechos reservados</i></p>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="js/func.js"></script>
-</body>
-
+  </body>
 </html>
