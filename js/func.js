@@ -53,42 +53,62 @@ window.addEventListener("load", function () {
   }, 0);
 });
 window.addEventListener("load", function () {
-    setTimeout(function () {
-      overlay2.classList.add("active");
-    }, 200);
-  });
-  window.addEventListener("load", function () {
-    setTimeout(function () {
-      overlay3.classList.add("active");
-    }, 300);
-  });
+  setTimeout(function () {
+    overlay2.classList.add("active");
+  }, 200);
+});
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    overlay3.classList.add("active");
+  }, 300);
+});
 
 var flagWorks = false;
 function works(option) {
   var staticElements = document.getElementsByClassName("static");
   var djangoElements = document.getElementsByClassName("django");
+  var reactNativeElements = document.getElementsByClassName("reactNative");
 
-  if (option == 'all') {
+  if (option == "all") {
     for (var i = 0; i < staticElements.length; i++) {
-      staticElements[i].style.display = 'block';
+      staticElements[i].style.display = "block";
     }
     for (var j = 0; j < djangoElements.length; j++) {
-      djangoElements[j].style.display = 'block';
+      djangoElements[j].style.display = "block";
     }
-  } else if(option == 'static') {
+    for (var i = 0; i < reactNativeElements.length; i++) {
+      reactNativeElements[i].style.display = "block";
+    }
+  } else if (option == "static") {
     for (var i = 0; i < staticElements.length; i++) {
-      staticElements[i].style.display = 'block';
+      staticElements[i].style.display = "block";
     }
     for (var j = 0; j < djangoElements.length; j++) {
-      djangoElements[j].style.display = 'none';
+      djangoElements[j].style.display = "none";
     }
-  }else if (option == 'django') {
+    for (var j = 0; j < reactNativeElements.length; j++) {
+      reactNativeElements[j].style.display = "none";
+    }
+  } else if (option == "django") {
     for (var i = 0; i < staticElements.length; i++) {
-      staticElements[i].style.display = 'none';
+      staticElements[i].style.display = "none";
     }
     for (var j = 0; j < djangoElements.length; j++) {
-      djangoElements[j].style.display = 'block';
+      djangoElements[j].style.display = "block";
+    }
+    for (var j = 0; j < reactNativeElements.length; j++) {
+      reactNativeElements[j].style.display = "none";
+    }
+  } else if (option == "reactNative") {
+    console.log("En react");
+    for (var i = 0; i < reactNativeElements.length; i++) {
+      reactNativeElements[i].style.display = "block";
+    }
+    for (var i = 0; i < staticElements.length; i++) {
+      staticElements[i].style.display = "none";
+    }
+    for (var j = 0; j < djangoElements.length; j++) {
+      djangoElements[j].style.display = "none";
     }
   }
-
 }
