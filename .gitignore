@@ -5,3 +5,4 @@ Thumbs.db
 react-cv/node_modules/
 react-cv/dist/
 react-cv/.vite/
+react-cv/public/assets/projects/downloads/
