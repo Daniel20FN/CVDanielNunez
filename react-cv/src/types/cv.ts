@@ -3,146 +3,67 @@ export const LANGUAGES = {
   EN: "en",
 } as const;
 
-export const RESOURCE_KINDS = {
-  LIVE: "live",
-  DOWNLOAD: "download",
-  VIDEO: "video",
-  CERTIFICATE: "certificate",
-  LEGACY: "legacy",
-} as const;
-
 export type Language = (typeof LANGUAGES)[keyof typeof LANGUAGES];
-export type ResourceKind = (typeof RESOURCE_KINDS)[keyof typeof RESOURCE_KINDS];
 
 export interface LocalizedText {
   es: string;
   en: string;
 }
 
-export interface NavItem {
-  id: string;
+/** Windows that belong to the guided tour, in the order the visitor is led through them. */
+export const TOUR_WINDOWS = ["about", "journey", "method", "projects", "cv", "contact"] as const;
+
+export const PROJECT_WINDOWS = ["project-platform", "project-evolx"] as const;
+
+/** Every window on the desktop; this order is also the render and taskbar order. */
+export const WINDOW_IDS = ["welcome", ...TOUR_WINDOWS, ...PROJECT_WINDOWS, "trash"] as const;
+
+export type TourWindowId = (typeof TOUR_WINDOWS)[number];
+export type ProjectWindowId = (typeof PROJECT_WINDOWS)[number];
+export type WindowId = (typeof WINDOW_IDS)[number];
+
+export type IconGlyph = "folder" | "folder-warm" | "pdf" | "txt" | "app" | "trash";
+
+export interface DesktopIconItem {
+  window: WindowId;
   label: LocalizedText;
+  glyph: IconGlyph;
 }
 
-export interface ActionLink {
-  label: LocalizedText;
-  href: string;
-  download?: boolean;
-  external?: boolean;
-}
-
-export interface HeroStat {
-  label: LocalizedText;
-  value: string;
-}
-
-export interface ProfileFact {
-  label: LocalizedText;
-  value: LocalizedText;
-}
-
-export interface ExperienceItem {
-  company: string;
-  role: LocalizedText;
-  period: string;
-  description: LocalizedText;
-  stack: string[];
-  highlights: LocalizedText[];
-}
-
-export interface EducationResource {
-  label: LocalizedText;
-  kind: ResourceKind;
-  href?: string;
-  assetPath?: string;
-  download?: boolean;
-  note?: LocalizedText;
-}
-
-export interface EducationItem {
-  institution: string;
-  program: LocalizedText;
-  period: string;
-  note?: LocalizedText;
-  resources?: EducationResource[];
-}
-
-export interface EducationGroup {
+export interface WindowMeta {
   title: LocalizedText;
-  description: LocalizedText;
-  items: EducationItem[];
+  /** CSS width used on desktop screens; phones always get a full-screen sheet. */
+  width: string;
 }
 
-export interface ProjectResource {
-  label: LocalizedText;
-  kind: ResourceKind;
-  href?: string;
-  assetPath?: string;
-  download?: boolean;
-  note?: LocalizedText;
+export interface JourneyStep {
+  period: LocalizedText;
+  title: LocalizedText;
+  place: string;
+  text?: LocalizedText;
+  /** Marks stages that are still ongoing. */
+  current?: boolean;
 }
+
+export interface MethodStep {
+  title: LocalizedText;
+  text: LocalizedText;
+}
+
+export type ProjectPreviewKind = "dashboard" | "recipes";
 
 export interface ProjectItem {
-  title: string;
-  category: LocalizedText;
-  coverImageAlt?: LocalizedText;
-  coverImagePath?: string;
-  description: LocalizedText;
-  href: string;
-  cta: LocalizedText;
-  summary: LocalizedText;
-  tags: string[];
-  resources: ProjectResource[];
-  featured?: boolean;
-}
-
-export interface SkillItem {
-  name: string;
-  level: number;
-  category: LocalizedText;
-}
-
-export interface SkillGroup {
+  window: ProjectWindowId;
   title: LocalizedText;
-  items: string[];
+  description: LocalizedText;
+  place: string;
+  period: LocalizedText;
+  role: LocalizedText;
+  stack: string[];
+  preview: ProjectPreviewKind;
 }
 
-export interface ContactItem {
-  label: LocalizedText;
-  value: string;
-  href: string;
-  detail?: LocalizedText;
-}
-
-export interface CVData {
-  metaTitle: string;
-  brand: string;
-  availability: LocalizedText;
-  nav: NavItem[];
-  heroEyebrow: LocalizedText;
-  heroTitle: LocalizedText;
-  heroRole: LocalizedText;
-  heroIntro: LocalizedText;
-  heroActions: ActionLink[];
-  heroStats: HeroStat[];
-  featuredTechnologies: string[];
-  profileFacts: ProfileFact[];
-  aboutTitle: LocalizedText;
-  aboutBody: LocalizedText[];
-  profileHighlights: LocalizedText[];
-  softSkills: LocalizedText[];
-  experienceTitle: LocalizedText;
-  experiences: ExperienceItem[];
-  educationTitle: LocalizedText;
-  educationGroups: EducationGroup[];
-  projectsTitle: LocalizedText;
-  projects: ProjectItem[];
-  skillsTitle: LocalizedText;
-  skills: SkillItem[];
-  skillGroups: SkillGroup[];
-  contactTitle: LocalizedText;
-  contactIntro: LocalizedText;
-  contacts: ContactItem[];
-  contactActions: ActionLink[];
-  footer: LocalizedText;
+export interface TrashItem {
+  name: LocalizedText;
+  size: string;
 }

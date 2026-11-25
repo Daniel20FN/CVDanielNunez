@@ -20,7 +20,9 @@
 - `react-cv/` - incremental React migration workspace.
 - `react-cv/src/data/cv.ts` - centralized bilingual CV content for the React app.
 - `react-cv/src/types/` - shared React CV types.
-- `react-cv/src/components/sections/` - React CV section components for the single-page layout.
+- `react-cv/src/components/desktop/` - desktop shell: menu bar, icons, draggable windows and taskbar.
+- `react-cv/src/components/windows/` - the content shown inside each desktop window.
+- `react-cv/src/hooks/useWindowManager.ts` - window state: open, minimize, focus order, placement and guided-tour progress.
 
 ## Commands
 
@@ -66,7 +68,7 @@ React-specific focused flow:
 
 1. Run `npm install` inside `react-cv/` if dependencies are not present.
 2. Run `npm run dev` inside `react-cv/`.
-3. Open the Vite URL and exercise only the affected React section.
+3. Open the Vite URL and exercise only the affected window, at desktop width and below `720px`.
 
 Examples of a single focused manual test:
 
@@ -81,7 +83,7 @@ Examples of a single focused manual test:
 - Keep changes small and targeted.
 - Preserve coexistence: legacy root site and `react-cv/` must be able to evolve independently.
 - Before editing legacy content, identify the section anchor or component block in `index.html` and update the matching styles or behavior in the related legacy file only.
-- Before editing React content, identify the matching data shape in `react-cv/src/data/cv.ts` and the section component that renders it.
+- Before editing React content, identify the matching data shape in `react-cv/src/data/cv.ts` and the window component that renders it.
 - If you add a new asset, keep it under the appropriate app boundary and reference it relative to that app.
 - Avoid renaming legacy public IDs, section anchors, CSS classes, or global JS functions unless the task explicitly requires it; markup, CSS, and JS are tightly coupled.
 - Keep React migration work inside `react-cv/` unless the task is explicitly about shared hygiene or documentation.
@@ -97,13 +99,13 @@ Examples of a single focused manual test:
 
 ## React CV Conventions
 
-- Stack: Vite + React + TypeScript + Tailwind.
-- Product direction: single-page, editorial/premium redesign, bilingual with Spanish default, no dark mode in v1.
-- Centralize CV content in `react-cv/src/data/cv.ts`.
-- Keep shared shapes in `react-cv/src/types/`.
-- Build sections as focused components under `react-cv/src/components/sections/`.
-- Prefer presentational components fed by typed data over hardcoded copy inside JSX.
-- Keep the first migration slices faithful to the legacy CV content, even when the visual design changes significantly.
+- Stack: Vite + React + TypeScript; Tailwind is available, but the desktop styles live in `react-cv/src/styles.css`.
+- Product direction: a dark personal "desktop" with a grid wallpaper; folders open as draggable windows and a six-step guided tour (about, journey, method, projects, CV, contact) leads the visitor. Bilingual, Spanish by default. Keep it short and animations light, and respect `prefers-reduced-motion`.
+- On phones (below `720px`) icons form a grid and every window is a full-screen sheet; dragging is desktop-only.
+- Centralize CV content and every visible string (`UI`) in `react-cv/src/data/cv.ts`; keep shared shapes in `react-cv/src/types/`.
+- Add a window by extending `WINDOW_IDS`, `WINDOWS` and `renderBody` in `App.tsx`, with its content component under `components/windows/`.
+- The downloadable CV is `react-cv/public/assets/documents/cv/cv-daniel-nunez-en.pdf`; keep the legacy `certificados/cv-daniel-nunez*.pdf` copies in sync while the root site is live.
+- Do not publish screenshots of client products; project windows use abstract previews.
 
 ## HTML Conventions
 
